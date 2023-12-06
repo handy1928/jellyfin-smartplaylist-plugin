@@ -36,6 +36,7 @@ namespace Jellyfin.Plugin.SmartPlaylist.QueryEngine
         public List<string> Genres { get; set; }
         public List<string> GuestStars { get; set; }
         public bool IsPlayed { get; set; }
+        public bool IsFavorited { get; set; }
         public string Name { get; set; }
         public string FolderPath { get; set; }
         public double PremiereDate { get; set; }
