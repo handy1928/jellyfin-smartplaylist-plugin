@@ -18,7 +18,7 @@ namespace Jellyfin.Plugin.SmartPlaylist.QueryEngine
             PremiereDate = 0;
             Producers = new List<string>();
             Studios = new List<string>();
-			Tags = new List<string>();
+            Tags = new List<string>();
             Writers = new List<string>();
             MediaType = "";
             Album = "";
