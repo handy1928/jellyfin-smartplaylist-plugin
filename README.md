@@ -76,6 +76,7 @@ To create a new playlist, create a json file in this directory having a format s
   - Release Date Descending
   - Episode Title Ascending
   - Episode Title Descending
+  - FolderPath
 
 ## Future work
 

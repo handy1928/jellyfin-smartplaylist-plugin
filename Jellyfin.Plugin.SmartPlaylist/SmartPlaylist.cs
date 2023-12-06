@@ -41,6 +41,9 @@ namespace Jellyfin.Plugin.SmartPlaylist
                 case "Episode Title Descending":
                     Order = new EpisodeTitleOrderDesc();
                     break;
+                case "FolderPath":
+                    Order = new FolderPathOrder();
+                    break;
                 default:
                     Order = new NoOrder();
                     break;
@@ -140,5 +143,31 @@ namespace Jellyfin.Plugin.SmartPlaylist
             return items.OrderByDescending(x => x.Name);
         }
     }
+
+    public class FolderPathOrder : Order
+    {
+        public override string Name => "FolderPath";
+
+        public override IEnumerable<BaseItem> OrderBy(IEnumerable<BaseItem> items)
+        {
+            return items.OrderBy(x => x, new FolderPathNameComparer());
+        }
+    }
+
+    public class FolderPathNameComparer : IComparer<BaseItem>
+    {
+        public int Compare(BaseItem x, BaseItem y)
+        {
+            var folderPathComparison = string.Compare(x.ContainingFolderPath, y.ContainingFolderPath, StringComparison.OrdinalIgnoreCase);
+            if (folderPathComparison != 0)
+            {
+                return folderPathComparison;
+            }
+            // If FolderPaths are the same, sort by Name as secondary
+            return string.Compare(x.Name, y.Name, StringComparison.OrdinalIgnoreCase);
+        }
+    }
+
+
 
 }
