@@ -66,7 +66,7 @@ To create a new playlist, create a json file in this directory having a format s
   - String operators: Equals, StartsWith, EndsWith, Contains.
   - Regex operators: MatchRegex, NotMatchRegex.
 
-- MemberName: This is a reference to the properties in [Operand](https://github.com/ankenyr/jellyfin-smartplaylist-plugin/blob/master/Jellyfin.Plugin.SmartPlaylist/QueryEngine/Operand.cs "Operand"). You set this string to one of the property names to reference what you wish to filter on.
+- MemberName: This is a reference to the properties in [Operand](https://github.com/handy1928/jellyfin-smartplaylist-plugin/blob/master/Jellyfin.Plugin.SmartPlaylist/QueryEngine/Operand.cs "Operand"). You set this string to one of the property names to reference what you wish to filter on.
 - Operator: An operation used to compare the TargetValue to the property of each piece of media. The above example would match anything with the director set as CGP Grey with a Premiere Date less than 2020/07/01
 - Target Value: The value to be compared to. Most things are converted into strings, booleans, or numbers. A date in the above example is converted to seconds since epoch.
 

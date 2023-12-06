@@ -42,7 +42,7 @@ namespace Jellyfin.Plugin.SmartPlaylist.QueryEngine
         public double PremiereDate { get; set; }
         public List<string> Producers { get; set; }
         public List<string> Studios { get; set; }
-		public List<string> Tags { get; set; }
+        public List<string> Tags { get; set; }
         public List<string> Writers { get; set; }
         public string MediaType { get; set; }
         public string Album { get; set; }
