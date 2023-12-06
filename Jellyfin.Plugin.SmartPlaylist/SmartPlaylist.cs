@@ -35,6 +35,12 @@ namespace Jellyfin.Plugin.SmartPlaylist
                 case "Release Date Descending":
                     Order = new PremiereDateOrderDesc();
                     break;
+                case "Episode Title Ascending":
+                    Order = new EpisodeTitleOrder();
+                    break;
+                case "Episode Title Descending":
+                    Order = new EpisodeTitleOrderDesc();
+                    break;
                 default:
                     Order = new NoOrder();
                     break;
@@ -114,4 +120,25 @@ namespace Jellyfin.Plugin.SmartPlaylist
             return items.OrderByDescending(x => x.PremiereDate);
         }
     }
+
+    public class EpisodeTitleOrder : Order
+    {
+        public override string Name => "Episode Title Ascending";
+
+        public override IEnumerable<BaseItem> OrderBy(IEnumerable<BaseItem> items)
+        {
+            return items.OrderBy(x => x.Name);
+        }
+    }
+
+    public class EpisodeTitleOrderDesc : Order
+    {
+        public override string Name => "Episode Title Descending";
+
+        public override IEnumerable<BaseItem> OrderBy(IEnumerable<BaseItem> items)
+        {
+            return items.OrderByDescending(x => x.Name);
+        }
+    }
+
 }

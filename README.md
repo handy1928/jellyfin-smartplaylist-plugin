@@ -74,6 +74,8 @@ To create a new playlist, create a json file in this directory having a format s
   - NoOrder
   - Release Date Ascending
   - Release Date Descending
+  - Episode Title Ascending
+  - Episode Title Descending
 
 ## Future work
 
@@ -83,6 +85,10 @@ To create a new playlist, create a json file in this directory having a format s
 - Once Jellyfin allows for custom web pages beyond the configuration page, explore how to allow configuration from the web interface rather than JSON files.
 - Add more sorting methods.
 - Pretty Print JSON files, possibly this should be done by jellyfin itself.
+
+## Compile Plugin
+
+- dotnet publish --configuration Release --output bin
 
 ## Credits
 
