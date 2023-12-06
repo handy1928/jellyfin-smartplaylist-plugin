@@ -88,7 +88,9 @@ To create a new playlist, create a json file in this directory having a format s
 
 ## Compile Plugin
 
-- dotnet publish --configuration Release --output bin
+```
+dotnet publish --configuration Release --output bin
+```
 
 ## Credits
 
